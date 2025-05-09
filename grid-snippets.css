@@ -1,0 +1,38 @@
+@utility content-grid {
+  --padding-inline: 1rem;
+  --content-max-width: 35rem;
+  
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] minmax(0, var(--content-max-width))
+    [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+  grid-template-rows: auto 1fr;
+
+  > * {
+    grid-column: content;
+  }
+
+  > .full-width {
+    grid-column: full-width;
+  }
+} 
+
+
+ /* when using full-width on a header and you need flex then you'll have
+  to nest the flex inside of a div <header><div class="flex"></div></header> instead of 
+  putting flex directly on the header because it will overwrite the .full-width grid class 
+  */
+@utility full-width {
+  --padding-inline: 1rem;
+  --content-max-width: 35rem;
+  
+  display: grid;
+   grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] minmax(0, var(--content-max-width))
+    [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+  grid-template-rows: auto 1fr;
+
+  > * {
+    grid-column: content;
+  }
+}
