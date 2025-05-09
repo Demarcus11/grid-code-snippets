@@ -17,11 +17,6 @@
   }
 } 
 
-
- /* when using full-width on a header and you need flex then you'll have
-  to nest the flex inside of a div <header><div class="flex"></div></header> instead of 
-  putting flex directly on the header because it will overwrite the .full-width grid class 
-  */
 @utility full-width {
   --padding-inline: 1rem;
   --content-max-width: 35rem;
